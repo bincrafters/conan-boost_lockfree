@@ -14,7 +14,7 @@ class BoostLockfreeConan(ConanFile):
                       "Boost.Atomic/1.64.0@bincrafters/testing", \
                       "Boost.Config/1.64.0@bincrafters/testing", \
                       "Boost.Core/1.64.0@bincrafters/testing", \
-                      "Boost.integer/1.64.0@bincrafters/testing", \
+                      "Boost.Integer/1.64.0@bincrafters/testing", \
                       "Boost.Mpl/1.64.0@bincrafters/testing", \
                       "Boost.Parameter/1.64.0@bincrafters/testing", \
                       "Boost.Predef/1.64.0@bincrafters/testing", \
