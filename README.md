@@ -2,7 +2,7 @@
 
 [Conan.io](https://conan.io) package for [Boost.Lockfree](https://github.com/Boostorg/Lockfree) project
 
-The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/conan-public/Boost.Lockfree%3Abincrafters).
+The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/public-conan/Boost.Lockfree%3Abincrafters).
 
 ## For Users: Use this package
 
