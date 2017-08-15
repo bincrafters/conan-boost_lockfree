@@ -7,7 +7,7 @@ class BoostLockfreeConan(ConanFile):
     source_url = "https://github.com/boostorg/lockfree"
     description = "Please visit http://www.boost.org/doc/libs/1_64_0/libs/libraries.htm"
     license = "www.boost.org/users/license.html"
-    lib_short_name = "lockfree"
+    lib_short_names = ["lockfree"]
     requires =  "Boost.Align/1.64.0@bincrafters/testing", \
                       "Boost.Array/1.64.0@bincrafters/testing", \
                       "Boost.Assert/1.64.0@bincrafters/testing", \
@@ -25,12 +25,14 @@ class BoostLockfreeConan(ConanFile):
                       #align3 array3 assert1 atomic4 config0 core2 integer3 mpl5 parameter10 predef0 static_assert1 tuple4 type_traits3 utility5
                       
     def source(self):
-        self.run("git clone --depth=50 --branch=boost-{0} {1}.git"
-                 .format(self.version, self.source_url))
+        for lib_short_name in self.lib_short_names:
+            self.run("git clone --depth=50 --branch=boost-{0} https://github.com/boostorg/{1}.git"
+                     .format(self.version, lib_short_name)) 
 
     def package(self):
-        include_dir = os.path.join(self.build_folder, self.lib_short_name, "include")
-        self.copy(pattern="*", dst="include", src=include_dir)
+        for lib_short_name in self.lib_short_names:
+            include_dir = os.path.join(lib_short_name, "include")
+            self.copy(pattern="*", dst="include", src=include_dir)		
 
     def package_id(self):
         self.info.header_only()
