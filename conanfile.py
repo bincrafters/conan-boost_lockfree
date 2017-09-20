@@ -8,19 +8,19 @@ class BoostLockfreeConan(ConanFile):
     description = "Please visit http://www.boost.org/doc/libs/1_65_1/libs/libraries.htm"
     license = "www.boost.org/users/license.html"
     lib_short_names = ["lockfree"]
-    requires =  "Boost.Align/1.65.1@bincrafters/stable", \
-                      "Boost.Array/1.65.1@bincrafters/stable", \
-                      "Boost.Assert/1.65.1@bincrafters/stable", \
-                      "Boost.Atomic/1.65.1@bincrafters/stable", \
-                      "Boost.Config/1.65.1@bincrafters/stable", \
-                      "Boost.Core/1.65.1@bincrafters/stable", \
-                      "Boost.Integer/1.65.1@bincrafters/stable", \
-                      "Boost.Mpl/1.65.1@bincrafters/stable", \
-                      "Boost.Parameter/1.65.1@bincrafters/stable", \
-                      "Boost.Predef/1.65.1@bincrafters/stable", \
-                      "Boost.Static_Assert/1.65.1@bincrafters/stable", \
-                      "Boost.Type_Traits/1.65.1@bincrafters/stable", \
-                      "Boost.Utility/1.65.1@bincrafters/stable"
+    requires =  "Boost.Align/1.65.1@bincrafters/testing", \
+                      "Boost.Array/1.65.1@bincrafters/testing", \
+                      "Boost.Assert/1.65.1@bincrafters/testing", \
+                      "Boost.Atomic/1.65.1@bincrafters/testing", \
+                      "Boost.Config/1.65.1@bincrafters/testing", \
+                      "Boost.Core/1.65.1@bincrafters/testing", \
+                      "Boost.Integer/1.65.1@bincrafters/testing", \
+                      "Boost.Mpl/1.65.1@bincrafters/testing", \
+                      "Boost.Parameter/1.65.1@bincrafters/testing", \
+                      "Boost.Predef/1.65.1@bincrafters/testing", \
+                      "Boost.Static_Assert/1.65.1@bincrafters/testing", \
+                      "Boost.Type_Traits/1.65.1@bincrafters/testing", \
+                      "Boost.Utility/1.65.1@bincrafters/testing"
 
                       #align3 array3 assert1 atomic4 config0 core2 integer3 mpl5 parameter10 predef0 static_assert1 tuple4 type_traits3 utility5
                       
