@@ -7,7 +7,7 @@ from conans import ConanFile, tools
 class BoostLockfreeConan(ConanFile):
     name = "boost_lockfree"
     version = "1.66.0"
-    url = "https://github.com/bincrafters/conan-boost-lockfree"
+    url = "https://github.com/bincrafters/conan-boost_lockfree"
 
     lib_short_names = ["lockfree"]
     is_header_only = True
