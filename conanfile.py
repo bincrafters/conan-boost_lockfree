@@ -12,7 +12,7 @@ class BoostLockfreeConan(ConanFile):
     exports = ["LICENSE.md"]
     lib_short_names = ["lockfree"]
     is_header_only = True
-    settings = "compiler"
+    settings = "compiler", "os"
 
     def package_id_additional(self):
         self.info.header_only()
