@@ -18,7 +18,7 @@ class BoostLockfreeConan(ConanFile):
         self.info.header_only()
 
     def package_info_additional(self):
-        if self.settings.compiler == "clang":
+        if self.settings.compiler == "clang" and self.settings.os == "Linux":
             self.cpp_info.libs.append("atomic")
 
     requires = (
