@@ -12,9 +12,14 @@ class BoostLockfreeConan(ConanFile):
     exports = ["LICENSE.md"]
     lib_short_names = ["lockfree"]
     is_header_only = True
+    settings = "compiler", "os"
 
     def package_id_additional(self):
         self.info.header_only()
+
+    def package_info_additional(self):
+        if self.settings.compiler == "clang" and self.settings.os == "Linux":
+            self.cpp_info.libs.append("atomic")
 
     requires = (
         "boost_package_tools/1.66.0@bincrafters/testing",
