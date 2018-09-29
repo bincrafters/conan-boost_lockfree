@@ -1,71 +1,31 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from conans import ConanFile, tools
+from conans import python_requires
 
 
-class BoostLockfreeConan(ConanFile):
+base = python_requires("boost_base/1.67.0@bincrafters/testing")
+
+class BoostLockfreeConan(base.BoostBaseConan):
     name = "boost_lockfree"
-    version = "1.67.0"
-    author = "Bincrafters <bincrafters@gmail.com>"
-    exports = ["LICENSE.md"]
-    lib_short_names = ["lockfree"]
-    is_header_only = True
-
-    def package_id_additional(self):
-        self.info.header_only()
-
-    requires = (
-        "boost_align/1.67.0@bincrafters/testing",
-        "boost_array/1.67.0@bincrafters/testing",
-        "boost_assert/1.67.0@bincrafters/testing",
-        "boost_atomic/1.67.0@bincrafters/testing",
-        "boost_config/1.67.0@bincrafters/testing",
-        "boost_core/1.67.0@bincrafters/testing",
-        "boost_integer/1.67.0@bincrafters/testing",
-        "boost_mpl/1.67.0@bincrafters/testing",
-        "boost_package_tools/1.67.0@bincrafters/testing",
-        "boost_parameter/1.67.0@bincrafters/testing",
-        "boost_predef/1.67.0@bincrafters/testing",
-        "boost_static_assert/1.67.0@bincrafters/testing",
-        "boost_tuple/1.67.0@bincrafters/testing",
-        "boost_type_traits/1.67.0@bincrafters/testing",
-        "boost_utility/1.67.0@bincrafters/testing"
-    )
-
-    # BEGIN
-
     url = "https://github.com/bincrafters/conan-boost_lockfree"
-    description = "Please visit http://www.boost.org/doc/libs/1_67_0"
-    license = "BSL-1.0"
-    short_paths = True
-    build_requires = "boost_generator/1.67.0@bincrafters/testing"
+    lib_short_names = ["lockfree"]
+    header_only_libs = ["lockfree"]
+    b2_requires = [
+        "boost_align",
+        "boost_array",
+        "boost_assert",
+        "boost_atomic",
+        "boost_config",
+        "boost_core",
+        "boost_integer",
+        "boost_mpl",
+        "boost_parameter",
+        "boost_predef",
+        "boost_static_assert",
+        "boost_tuple",
+        "boost_type_traits",
+        "boost_utility"
+    ]
 
-    def package_id(self):
-        getattr(self, "package_id_additional", lambda:None)()
 
-    def source(self):
-        with tools.pythonpath(self):
-            import boost_package_tools  # pylint: disable=F0401
-            boost_package_tools.source(self)
-        getattr(self, "source_additional", lambda:None)()
-
-    def build(self):
-        with tools.pythonpath(self):
-            import boost_package_tools  # pylint: disable=F0401
-            boost_package_tools.build(self)
-        getattr(self, "build_additional", lambda:None)()
-
-    def package(self):
-        with tools.pythonpath(self):
-            import boost_package_tools  # pylint: disable=F0401
-            boost_package_tools.package(self)
-        getattr(self, "package_additional", lambda:None)()
-
-    def package_info(self):
-        with tools.pythonpath(self):
-            import boost_package_tools  # pylint: disable=F0401
-            boost_package_tools.package_info(self)
-        getattr(self, "package_info_additional", lambda:None)()
-
-    # END
