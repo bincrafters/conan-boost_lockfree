@@ -4,7 +4,7 @@
 from conans import python_requires
 
 
-base = python_requires("boost_base/1.67.0@bincrafters/testing")
+base = python_requires("boost_base/1.68.0@bincrafters/testing")
 
 class BoostLockfreeConan(base.BoostBaseConan):
     name = "boost_lockfree"
@@ -19,6 +19,7 @@ class BoostLockfreeConan(base.BoostBaseConan):
         "boost_config",
         "boost_core",
         "boost_integer",
+        "boost_iterator",
         "boost_mpl",
         "boost_parameter",
         "boost_predef",
@@ -27,5 +28,3 @@ class BoostLockfreeConan(base.BoostBaseConan):
         "boost_type_traits",
         "boost_utility"
     ]
-
-
